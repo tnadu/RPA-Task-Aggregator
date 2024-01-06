@@ -7,7 +7,7 @@
     <x:Property Name="Workers" Type="OutArgument(scg:List(x:String))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1234,3587</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,4431</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -159,19 +159,67 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Email_Extraction" sap:VirtualizedContainerService.HintSize="688,3522" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Email_Extraction" sap:VirtualizedContainerService.HintSize="688,4366" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="tudor.nadu@gmail.com" DisplayName="Use Gmail" EmailAddress="tudor.nadu@gmail.com" sap:VirtualizedContainerService.HintSize="626,3411" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+    <Assign DisplayName="Initialize Service List" sap:VirtualizedContainerService.HintSize="626,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(sd:DataTable)">
+          <CSharpReference x:TypeArguments="scg:List(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">Services</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(sd:DataTable)">
+          <CSharpValue x:TypeArguments="scg:List(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">new List&lt;DataTable&gt;();</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Product List" sap:VirtualizedContainerService.HintSize="626,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(sd:DataTable)">
+          <CSharpReference x:TypeArguments="scg:List(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">Products</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(sd:DataTable)">
+          <CSharpValue x:TypeArguments="scg:List(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81" xml:space="preserve">new  List&lt;DataTable&gt;();</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Worker List" sap:VirtualizedContainerService.HintSize="626,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">Workers</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_82">new List&lt;String&gt;();</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Temporary Folder List" sap:VirtualizedContainerService.HintSize="626,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">TemporaryFolders</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">new List&lt;String&gt;();</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <umab:GmailApplicationCard ClientId="{x:Null}" ClientSecret="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="tudor.nadu@gmail.com" DisplayName="Use Gmail" EmailAddress="tudor.nadu@gmail.com" sap:VirtualizedContainerService.HintSize="626,3767" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
       <umab:GmailApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,3231" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,3587" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="CurrentWorker" />
             </Sequence.Variables>
@@ -180,7 +228,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="530,3120" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" NumberOfEmailsLimit="5" UnreadOnly="True" WithAttachmentsOnly="False">
+            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="530,3476" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" NumberOfEmailsLimit="5" UnreadOnly="True" WithAttachmentsOnly="False">
               <umab:ForEachEmailX.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                   <ActivityAction.Argument1>
@@ -189,18 +237,15 @@
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2869" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,3225" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="CurrentServices" />
                       <Variable x:TypeArguments="x:String" Name="CurrentInvoice" />
                       <Variable x:TypeArguments="x:String" Name="CurrentTemporaryFolder" />
-                      <Variable x:TypeArguments="x:String" Name="CurrentProductString">
-                        <Variable.Default>
-                          <Literal x:TypeArguments="x:String" Value="" />
-                        </Variable.Default>
-                      </Variable>
+                      <Variable x:TypeArguments="x:String" Default="[Nothing]" Name="CurrentProductString" />
                       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="CurrentMatches" />
                       <Variable x:TypeArguments="sd:DataTable" Name="CurrentProducts" />
+                      <Variable x:TypeArguments="x:String" Name="Test" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -210,175 +255,262 @@
                     <ui:InvokeCode ContinueOnError="{x:Null}" Code="char[] delimiters = { '@', '.' };&#xA;string[] words = CurrentSenderEmail.Split(delimiters);&#xA;CurrentSender = char.ToUpper(words[0][0]) + words[0].Substring(1) + &quot; &quot; + char.ToUpper(words[1][0]) + words[1].Substring(1);" DisplayName="Process the current worker's name" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3" Language="CSharp">
                       <ui:InvokeCode.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="CurrentSenderEmail">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">CurrentMail.SenderEmailAddress()</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </CSharpValue.Result>CurrentMail.SenderEmailAddress()</CSharpValue>
                         </InArgument>
                         <OutArgument x:TypeArguments="x:String" x:Key="CurrentSender">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">CurrentWorker</CSharpReference>
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">
+                            <CSharpReference.Result>
+                              <OutArgument x:TypeArguments="Location(x:String)" />
+                            </CSharpReference.Result>CurrentWorker</CSharpReference>
                         </OutArgument>
                       </ui:InvokeCode.Arguments>
                     </ui:InvokeCode>
                     <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append current worker name to the list of worker names" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_4">
                       <uasa:AppendItemToList.ItemToAppend>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">CurrentWorker</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </CSharpValue.Result>CurrentWorker</CSharpValue>
                         </InArgument>
                       </uasa:AppendItemToList.ItemToAppend>
                       <uasa:AppendItemToList.List>
                         <InArgument x:TypeArguments="scg:IList(x:String)">
-                          <CSharpValue x:TypeArguments="scg:IList(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">Workers</CSharpValue>
+                          <CSharpValue x:TypeArguments="scg:IList(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="scg:IList(x:String)" />
+                            </CSharpValue.Result>Workers</CSharpValue>
                         </InArgument>
                       </uasa:AppendItemToList.List>
                     </uasa:AppendItemToList>
                     <ui:GenerateDataTable ColumnSizes="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators=" " DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="434,201" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" NewLineSeparator="&#xA;">
                       <ui:GenerateDataTable.DataTable>
                         <OutArgument x:TypeArguments="sd:DataTable">
-                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">CurrentServices</CSharpReference>
+                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">
+                            <CSharpReference.Result>
+                              <OutArgument x:TypeArguments="Location(sd:DataTable)" />
+                            </CSharpReference.Result>CurrentServices</CSharpReference>
                         </OutArgument>
                       </ui:GenerateDataTable.DataTable>
                       <ui:GenerateDataTable.Input>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">CurrentMail.Body</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </CSharpValue.Result>CurrentMail.Body</CSharpValue>
                         </InArgument>
                       </ui:GenerateDataTable.Input>
                     </ui:GenerateDataTable>
                     <uasa:AppendItemToList x:TypeArguments="sd:DataTable" ItemIndex="{x:Null}" DisplayName="Append current service to the list of servces" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_6">
                       <uasa:AppendItemToList.ItemToAppend>
                         <InArgument x:TypeArguments="sd:DataTable">
-                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">CurrentServices</CSharpValue>
+                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="sd:DataTable" />
+                            </CSharpValue.Result>CurrentServices</CSharpValue>
                         </InArgument>
                       </uasa:AppendItemToList.ItemToAppend>
                       <uasa:AppendItemToList.List>
                         <InArgument x:TypeArguments="scg:IList(sd:DataTable)">
-                          <CSharpValue x:TypeArguments="scg:IList(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">Services</CSharpValue>
+                          <CSharpValue x:TypeArguments="scg:IList(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="scg:IList(sd:DataTable)" />
+                            </CSharpValue.Result>Services</CSharpValue>
                         </InArgument>
                       </uasa:AppendItemToList.List>
                     </uasa:AppendItemToList>
                     <Assign DisplayName="Store the current temporary folder" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">CurrentTemporaryFolder</CSharpReference>
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">
+                            <CSharpReference.Result>
+                              <OutArgument x:TypeArguments="Location(x:String)" />
+                            </CSharpReference.Result>CurrentTemporaryFolder</CSharpReference>
                         </OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">DateTime.Now.ToString("dd-MM-yyyy HH.mm.ss") + " - " + CurrentWorker</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </CSharpValue.Result>DateTime.Now.ToString("dd-MM-yyyy HH.mm.ss") + " - " + CurrentWorker</CSharpValue>
                         </InArgument>
                       </Assign.Value>
                     </Assign>
                     <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append current temporary folder" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_3">
                       <uasa:AppendItemToList.ItemToAppend>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">CurrentTemporaryFolder</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </CSharpValue.Result>CurrentTemporaryFolder</CSharpValue>
                         </InArgument>
                       </uasa:AppendItemToList.ItemToAppend>
                       <uasa:AppendItemToList.List>
                         <InArgument x:TypeArguments="scg:IList(x:String)">
-                          <CSharpValue x:TypeArguments="scg:IList(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">TemporaryFolders</CSharpValue>
+                          <CSharpValue x:TypeArguments="scg:IList(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="scg:IList(x:String)" />
+                            </CSharpValue.Result>TemporaryFolders</CSharpValue>
                         </InArgument>
                       </uasa:AppendItemToList.List>
                     </uasa:AppendItemToList>
                     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create folder for the current task" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_2">
                       <ui:CreateDirectory.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder</CSharpValue>
                         </InArgument>
                       </ui:CreateDirectory.Path>
                     </ui:CreateDirectory>
                     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create sub-folder for the source files" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_3">
                       <ui:CreateDirectory.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Source"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Source"</CSharpValue>
                         </InArgument>
                       </ui:CreateDirectory.Path>
                     </ui:CreateDirectory>
                     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create sub-folder for the processed files" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_4">
                       <ui:CreateDirectory.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Processed"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Processed"</CSharpValue>
                         </InArgument>
                       </ui:CreateDirectory.Path>
                     </ui:CreateDirectory>
                     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create sub-folder for the extracted images" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_5">
                       <ui:CreateDirectory.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Processed\\Images"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Processed\\Images"</CSharpValue>
                         </InArgument>
                       </ui:CreateDirectory.Path>
                     </ui:CreateDirectory>
                     <umab:SaveMailAttachmentsX Attachments="{x:Null}" DisplayName="Save Email Attachments" ExcludeInlineAttachments="True" sap:VirtualizedContainerService.HintSize="434,228" sap2010:WorkflowViewState.IdRef="SaveMailAttachmentsX_1" OverwriteExisting="False">
                       <umab:SaveMailAttachmentsX.FolderPath>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Source"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Source"</CSharpValue>
                         </InArgument>
                       </umab:SaveMailAttachmentsX.FolderPath>
                       <umab:SaveMailAttachmentsX.Message>
                         <InArgument x:TypeArguments="snm:MailMessage">
-                          <CSharpValue x:TypeArguments="snm:MailMessage" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">CurrentMail</CSharpValue>
+                          <CSharpValue x:TypeArguments="snm:MailMessage" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="snm:MailMessage" />
+                            </CSharpValue.Result>CurrentMail</CSharpValue>
                         </InArgument>
                       </umab:SaveMailAttachmentsX.Message>
                     </umab:SaveMailAttachmentsX>
                     <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All">
                       <ui:ReadPDFText.FileName>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Source\\" + Config["InvoiceFileName"]</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Source\\" + Config["InvoiceFileName"]</CSharpValue>
                         </InArgument>
                       </ui:ReadPDFText.FileName>
                       <ui:ReadPDFText.Text>
                         <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">CurrentInvoice</CSharpReference>
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">
+                            <CSharpReference.Result>
+                              <OutArgument x:TypeArguments="Location(x:String)" />
+                            </CSharpReference.Result>CurrentInvoice</CSharpReference>
                         </OutArgument>
                       </ui:ReadPDFText.Text>
                     </ui:ReadPDFText>
                     <ui:Matches FirstMatch="{x:Null}" BuilderPattern="[\w\d\.\,\-\\/]+(?:\s)+(?:\d)+(?:\s)+[\d\.\,]+(?:\s)+[\d\.\,]+" DisplayName="Find the products within the pdf file" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_2" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;\\w\\d\\.\\,\\-\\\\\/&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;At least one (1 or more)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\\s&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;At least one (1 or more)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:2,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;At least one (1 or more)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:3,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\\s&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;At least one (1 or more)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:4,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;\\d\\.\\,&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;At least one (1 or more)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:5,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\\s&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;At least one (1 or more)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:6,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;\\d\\.\\,&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;At least one (1 or more)&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="[\w\d\.\,\-\\/]+(?:\s)+(?:\d)+(?:\s)+[\d\.\,]+(?:\s)+[\d\.\,]+" RegexOption="IgnoreCase, Compiled">
                       <ui:Matches.Input>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">CurrentInvoice</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </CSharpValue.Result>CurrentInvoice</CSharpValue>
                         </InArgument>
                       </ui:Matches.Input>
                       <ui:Matches.Result>
                         <OutArgument x:TypeArguments="scg:IEnumerable(str:Match)">
-                          <CSharpReference x:TypeArguments="scg:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">CurrentMatches</CSharpReference>
+                          <CSharpReference x:TypeArguments="scg:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">
+                            <CSharpReference.Result>
+                              <OutArgument x:TypeArguments="Location(scg:IEnumerable(str:Match))" />
+                            </CSharpReference.Result>CurrentMatches</CSharpReference>
                         </OutArgument>
                       </ui:Matches.Result>
                     </ui:Matches>
                     <ui:InvokeCode ContinueOnError="{x:Null}" Code="foreach (Match match in Matches)&#xA;&#x9;Products += match.Value + &quot;\n&quot;;" DisplayName="Convert the product collection to a string" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="InvokeCode_4" Language="CSharp">
                       <ui:InvokeCode.Arguments>
                         <InArgument x:TypeArguments="scg:IEnumerable(str:Match)" x:Key="Matches">
-                          <CSharpValue x:TypeArguments="scg:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">CurrentMatches</CSharpValue>
+                          <CSharpValue x:TypeArguments="scg:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="scg:IEnumerable(str:Match)" />
+                            </CSharpValue.Result>CurrentMatches</CSharpValue>
                         </InArgument>
                         <OutArgument x:TypeArguments="x:String" x:Key="Products">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">CurrentProductString</CSharpReference>
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">
+                            <CSharpReference.Result>
+                              <OutArgument x:TypeArguments="Location(x:String)" />
+                            </CSharpReference.Result>CurrentProductString</CSharpReference>
                         </OutArgument>
                       </ui:InvokeCode.Arguments>
                     </ui:InvokeCode>
                     <ui:GenerateDataTable ColumnSizes="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators=" " DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="434,201" sap2010:WorkflowViewState.IdRef="GenerateDataTable_2" NewLineSeparator="&#xA;">
                       <ui:GenerateDataTable.DataTable>
                         <OutArgument x:TypeArguments="sd:DataTable">
-                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">CurrentProducts</CSharpReference>
+                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">
+                            <CSharpReference.Result>
+                              <OutArgument x:TypeArguments="Location(sd:DataTable)" />
+                            </CSharpReference.Result>CurrentProducts</CSharpReference>
                         </OutArgument>
                       </ui:GenerateDataTable.DataTable>
                       <ui:GenerateDataTable.Input>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">CurrentProductString</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </CSharpValue.Result>CurrentProductString</CSharpValue>
                         </InArgument>
                       </ui:GenerateDataTable.Input>
                     </ui:GenerateDataTable>
+                    <uasa:AppendItemToList x:TypeArguments="sd:DataTable" ItemIndex="{x:Null}" DisplayName="Append current product to the list of products" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_8">
+                      <uasa:AppendItemToList.ItemToAppend>
+                        <InArgument x:TypeArguments="sd:DataTable">
+                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_90">CurrentProducts</CSharpValue>
+                        </InArgument>
+                      </uasa:AppendItemToList.ItemToAppend>
+                      <uasa:AppendItemToList.List>
+                        <InArgument x:TypeArguments="scg:IList(sd:DataTable)">
+                          <CSharpValue x:TypeArguments="scg:IList(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_91">Products</CSharpValue>
+                        </InArgument>
+                      </uasa:AppendItemToList.List>
+                    </uasa:AppendItemToList>
                     <upap:ExtractImagesFromPDF DisplayName="Extract Images From PDF" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="ExtractImagesFromPDF_1">
                       <upap:ExtractImagesFromPDF.FileName>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Source\\" + Config["ImagesFileName"]</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_92">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Source\\" + Config["ImagesFileName"]</CSharpValue>
                         </InArgument>
                       </upap:ExtractImagesFromPDF.FileName>
                       <upap:ExtractImagesFromPDF.OutputFolderName>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">"C:\\Users\\University\\Documents\\Temp\\" + CurrentTemporaryFolder + "\\Processed\\Images"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_95">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Processed\\Images"</CSharpValue>
                         </InArgument>
                       </upap:ExtractImagesFromPDF.OutputFolderName>
                     </upap:ExtractImagesFromPDF>
+                    <ui:RenameFileX DisplayName="Rename Image" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True">
+                      <ui:RenameFileX.FilePath>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_93">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Processed\\Images\\Images.1.1"</CSharpValue>
+                        </InArgument>
+                      </ui:RenameFileX.FilePath>
+                      <ui:RenameFileX.NewName>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">Config["PathOfRootTemporaryFolder"] + "\\" + CurrentTemporaryFolder + "\\Processed\\Images\\" + CurrentTemporaryFolder</CSharpValue>
+                        </InArgument>
+                      </ui:RenameFileX.NewName>
+                    </ui:RenameFileX>
                     <umab:MarkMailAsReadX DisplayName="Mark Email As Read" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="MarkMailAsReadX_2" MarkAs="Read">
                       <umab:MarkMailAsReadX.MailMessage>
                         <InArgument x:TypeArguments="snm:MailMessage">
-                          <CSharpValue x:TypeArguments="snm:MailMessage" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">CurrentMail</CSharpValue>
+                          <CSharpValue x:TypeArguments="snm:MailMessage" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="snm:MailMessage" />
+                            </CSharpValue.Result>CurrentMail</CSharpValue>
                         </InArgument>
                       </umab:MarkMailAsReadX.MailMessage>
                     </umab:MarkMailAsReadX>
@@ -387,23 +519,16 @@
               </umab:ForEachEmailX.Body>
               <umab:ForEachEmailX.Mails>
                 <InArgument x:TypeArguments="scg:IEnumerable(snm:MailMessage)">
-                  <CSharpValue x:TypeArguments="scg:IEnumerable(snm:MailMessage)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">Gmail.Folder("Inbox")</CSharpValue>
+                  <CSharpValue x:TypeArguments="scg:IEnumerable(snm:MailMessage)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">
+                    <CSharpValue.Result>
+                      <OutArgument x:TypeArguments="scg:IEnumerable(snm:MailMessage)" />
+                    </CSharpValue.Result>Gmail.Folder("Inbox")</CSharpValue>
                 </InArgument>
               </umab:ForEachEmailX.Mails>
             </umab:ForEachEmailX>
           </Sequence>
         </ActivityAction>
       </umab:GmailApplicationCard.Body>
-      <umab:GmailApplicationCard.ClientId>
-        <InArgument x:TypeArguments="x:String">
-          <Literal x:TypeArguments="x:String" Value="" />
-        </InArgument>
-      </umab:GmailApplicationCard.ClientId>
-      <umab:GmailApplicationCard.ClientSecret>
-        <InArgument x:TypeArguments="x:String">
-          <Literal x:TypeArguments="x:String" Value="" />
-        </InArgument>
-      </umab:GmailApplicationCard.ClientSecret>
     </umab:GmailApplicationCard>
   </Sequence>
 </Activity>
