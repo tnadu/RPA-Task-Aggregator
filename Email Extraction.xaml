@@ -436,12 +436,12 @@
                     <ui:RenameFileX DisplayName="Rename Image" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True">
                       <ui:RenameFileX.FilePath>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_91" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Processed\\Images\\Images.1.1"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_93" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Processed\\Images\\Images.1.1.png"</CSharpValue>
                         </InArgument>
                       </ui:RenameFileX.FilePath>
                       <ui:RenameFileX.NewName>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_92" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Processed\\Images\\" + CurrentTemporaryFolder</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_95">CurrentTemporaryFolder + ".png"</CSharpValue>
                         </InArgument>
                       </ui:RenameFileX.NewName>
                     </ui:RenameFileX>
