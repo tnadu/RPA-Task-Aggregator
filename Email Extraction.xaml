@@ -7,7 +7,7 @@
     <x:Property Name="Workers" Type="OutArgument(scg:List(x:String))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1234,4248</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,4431</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -159,7 +159,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Email_Extraction" sap:VirtualizedContainerService.HintSize="688,4183" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Email_Extraction" sap:VirtualizedContainerService.HintSize="688,4366" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -213,19 +213,19 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="tudor.nadu@gmail.com" DisplayName="Use Gmail" EmailAddress="tudor.nadu@gmail.com" sap:VirtualizedContainerService.HintSize="626,3584" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="tudor.nadu@gmail.com" DisplayName="Use Gmail" EmailAddress="tudor.nadu@gmail.com" sap:VirtualizedContainerService.HintSize="626,3767" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
       <umab:GmailApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,3404" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,3587" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="530,3293" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" NumberOfEmailsLimit="5" UnreadOnly="True" WithAttachmentsOnly="False">
+            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="530,3476" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" NumberOfEmailsLimit="5" UnreadOnly="True" WithAttachmentsOnly="False">
               <umab:ForEachEmailX.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                   <ActivityAction.Argument1>
@@ -234,7 +234,7 @@
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,3042" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,3225" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="CurrentServices" />
                       <Variable x:TypeArguments="x:String" Name="CurrentInvoice" />
@@ -433,6 +433,18 @@
                         </InArgument>
                       </upap:ExtractImagesFromPDF.OutputFolderName>
                     </upap:ExtractImagesFromPDF>
+                    <ui:RenameFileX DisplayName="Rename Image" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True">
+                      <ui:RenameFileX.FilePath>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_91" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Processed\\Images\\Images.1.1"</CSharpValue>
+                        </InArgument>
+                      </ui:RenameFileX.FilePath>
+                      <ui:RenameFileX.NewName>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_92" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Processed\\Images\\" + CurrentTemporaryFolder</CSharpValue>
+                        </InArgument>
+                      </ui:RenameFileX.NewName>
+                    </ui:RenameFileX>
                     <umab:MarkMailAsReadX DisplayName="Mark Email As Read" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="MarkMailAsReadX_2" MarkAs="Read">
                       <umab:MarkMailAsReadX.MailMessage>
                         <InArgument x:TypeArguments="snm:MailMessage">
