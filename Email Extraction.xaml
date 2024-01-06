@@ -7,7 +7,7 @@
     <x:Property Name="Workers" Type="OutArgument(scg:List(x:String))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1234,3587</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,4248</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -159,28 +159,73 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Email_Extraction" sap:VirtualizedContainerService.HintSize="688,3522" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Email_Extraction" sap:VirtualizedContainerService.HintSize="688,4183" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="tudor.nadu@gmail.com" DisplayName="Use Gmail" EmailAddress="tudor.nadu@gmail.com" sap:VirtualizedContainerService.HintSize="626,3411" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+    <Assign DisplayName="Initialize Service List" sap:VirtualizedContainerService.HintSize="626,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(sd:DataTable)">
+          <CSharpReference x:TypeArguments="scg:List(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">Services</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(sd:DataTable)">
+          <CSharpValue x:TypeArguments="scg:List(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77">new List&lt;DataTable&gt;();</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Product List" sap:VirtualizedContainerService.HintSize="626,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(sd:DataTable)">
+          <CSharpReference x:TypeArguments="scg:List(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">Products</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(sd:DataTable)">
+          <CSharpValue x:TypeArguments="scg:List(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_78">new List&lt;DataTable&gt;();</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Worker List" sap:VirtualizedContainerService.HintSize="626,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">Workers</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">new List&lt;String&gt;();</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Temporary Folder List" sap:VirtualizedContainerService.HintSize="626,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">TemporaryFolders</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">new List&lt;String&gt;();</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="tudor.nadu@gmail.com" DisplayName="Use Gmail" EmailAddress="tudor.nadu@gmail.com" sap:VirtualizedContainerService.HintSize="626,3584" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
       <umab:GmailApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,3231" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="CurrentWorker" />
-            </Sequence.Variables>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,3404" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="530,3120" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" NumberOfEmailsLimit="5" UnreadOnly="True" WithAttachmentsOnly="False">
+            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="530,3293" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" NumberOfEmailsLimit="5" UnreadOnly="True" WithAttachmentsOnly="False">
               <umab:ForEachEmailX.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                   <ActivityAction.Argument1>
@@ -189,7 +234,7 @@
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2869" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,3042" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="CurrentServices" />
                       <Variable x:TypeArguments="x:String" Name="CurrentInvoice" />
@@ -201,6 +246,7 @@
                       </Variable>
                       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="CurrentMatches" />
                       <Variable x:TypeArguments="sd:DataTable" Name="CurrentProducts" />
+                      <Variable x:TypeArguments="x:String" Name="CurrentWorker" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -280,35 +326,35 @@
                     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create folder for the current task" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_2">
                       <ui:CreateDirectory.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder</CSharpValue>
                         </InArgument>
                       </ui:CreateDirectory.Path>
                     </ui:CreateDirectory>
                     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create sub-folder for the source files" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_3">
                       <ui:CreateDirectory.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Source"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_82" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Source"</CSharpValue>
                         </InArgument>
                       </ui:CreateDirectory.Path>
                     </ui:CreateDirectory>
                     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create sub-folder for the processed files" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_4">
                       <ui:CreateDirectory.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Processed"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Processed"</CSharpValue>
                         </InArgument>
                       </ui:CreateDirectory.Path>
                     </ui:CreateDirectory>
                     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create sub-folder for the extracted images" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_5">
                       <ui:CreateDirectory.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Processed\\Images"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Processed\\Images"</CSharpValue>
                         </InArgument>
                       </ui:CreateDirectory.Path>
                     </ui:CreateDirectory>
                     <umab:SaveMailAttachmentsX Attachments="{x:Null}" DisplayName="Save Email Attachments" ExcludeInlineAttachments="True" sap:VirtualizedContainerService.HintSize="434,228" sap2010:WorkflowViewState.IdRef="SaveMailAttachmentsX_1" OverwriteExisting="False">
                       <umab:SaveMailAttachmentsX.FolderPath>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Source"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Source"</CSharpValue>
                         </InArgument>
                       </umab:SaveMailAttachmentsX.FolderPath>
                       <umab:SaveMailAttachmentsX.Message>
@@ -320,7 +366,7 @@
                     <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All">
                       <ui:ReadPDFText.FileName>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Source\\" + Config["InvoiceFileName"]</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Source\\" + Config["InvoiceFileName"]</CSharpValue>
                         </InArgument>
                       </ui:ReadPDFText.FileName>
                       <ui:ReadPDFText.Text>
@@ -363,15 +409,27 @@
                         </InArgument>
                       </ui:GenerateDataTable.Input>
                     </ui:GenerateDataTable>
+                    <uasa:AppendItemToList x:TypeArguments="sd:DataTable" ItemIndex="{x:Null}" DisplayName="Append current products to the list of products" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_8">
+                      <uasa:AppendItemToList.ItemToAppend>
+                        <InArgument x:TypeArguments="sd:DataTable">
+                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">CurrentProducts</CSharpValue>
+                        </InArgument>
+                      </uasa:AppendItemToList.ItemToAppend>
+                      <uasa:AppendItemToList.List>
+                        <InArgument x:TypeArguments="scg:IList(sd:DataTable)">
+                          <CSharpValue x:TypeArguments="scg:IList(sd:DataTable)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">Products</CSharpValue>
+                        </InArgument>
+                      </uasa:AppendItemToList.List>
+                    </uasa:AppendItemToList>
                     <upap:ExtractImagesFromPDF DisplayName="Extract Images From PDF" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="ExtractImagesFromPDF_1">
                       <upap:ExtractImagesFromPDF.FileName>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">Config["PathOfRootTemporaryFolder"] + CurrentTemporaryFolder + "\\Source\\" + Config["ImagesFileName"]</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Source\\" + Config["ImagesFileName"]</CSharpValue>
                         </InArgument>
                       </upap:ExtractImagesFromPDF.FileName>
                       <upap:ExtractImagesFromPDF.OutputFolderName>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">"C:\\Users\\University\\Documents\\Temp\\" + CurrentTemporaryFolder + "\\Processed\\Images"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_90" xml:space="preserve">Config["PathOfRootTemporaryFolder"] +"\\"  + CurrentTemporaryFolder + "\\Processed\\Images"</CSharpValue>
                         </InArgument>
                       </upap:ExtractImagesFromPDF.OutputFolderName>
                     </upap:ExtractImagesFromPDF>
