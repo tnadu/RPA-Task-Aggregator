@@ -2,9 +2,10 @@
   <x:Members>
     <x:Property Name="Out_quantityList" Type="OutArgument(scg:List(x:Int32))" />
     <x:Property Name="Out_matchedRowList" Type="OutArgument(scg:List(sd:DataRow))" />
+    <x:Property Name="Service" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>587.3333333333334,2002</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1874,1880</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -42,6 +43,10 @@
       <x:String>DocumentFormat.OpenXml</x:String>
       <x:String>UiPath.Activities.System.Arrays</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -107,11 +112,13 @@
       <AssemblyReference>netstandard</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Service_Price_Assosiation" sap:VirtualizedContainerService.HintSize="572,1937.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Service_Price_Assosiation" sap:VirtualizedContainerService.HintSize="572,1815" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="dtEmailJobs" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtJobsTarrifs" />
       <Variable x:TypeArguments="x:String" Name="jobCode" />
       <Variable x:TypeArguments="x:Int32" Name="quantity" />
@@ -122,17 +129,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DisplayName="Build dtEmailJobs" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Job_x0020_Code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Quantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Job_x0020_Code&gt;EW-101&lt;/Job_x0020_Code&gt;&#xA;    &lt;Quantity&gt;1&lt;/Quantity&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Job_x0020_Code&gt;PU-305&lt;/Job_x0020_Code&gt;&#xA;    &lt;Quantity&gt;3&lt;/Quantity&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Job_x0020_Code&gt;OR-202&lt;/Job_x0020_Code&gt;&#xA;    &lt;Quantity&gt;5&lt;/Quantity&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Job_x0020_Code&gt;SI-406&lt;/Job_x0020_Code&gt;&#xA;    &lt;Quantity&gt;1&lt;/Quantity&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Job_x0020_Code&gt;SP-1414&lt;/Job_x0020_Code&gt;&#xA;    &lt;Quantity&gt;1&lt;/Quantity&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Job_x0020_Code&gt;SK-2828&lt;/Job_x0020_Code&gt;&#xA;    &lt;Quantity&gt;2&lt;/Quantity&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
-      <ui:BuildDataTable.DataTable>
-        <OutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">
-            <CSharpReference.Result>
-              <OutArgument x:TypeArguments="Location(sd:DataTable)" />
-            </CSharpReference.Result>dtEmailJobs</CSharpReference>
-        </OutArgument>
-      </ui:BuildDataTable.DataTable>
-    </ui:BuildDataTable>
-    <ui:ReadRange AddHeaders="True" DisplayName="Read Electrician Tariffs" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1:D12" SheetName="Sheet1" WorkbookPath="D:\Fmi unibuc\Anul III\Anul III, sem 1\RPA UiPath\RPA_Proiect\RPA-Task-Aggregator\Electrician_Tariffs.xlsx">
+    <ui:ReadRange AddHeaders="True" DisplayName="Read Electrician Tariffs" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1:D12" SheetName="Sheet1" WorkbookPath=".\\Tariffs.xlsx">
       <ui:ReadRange.DataTable>
         <OutArgument x:TypeArguments="sd:DataTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">
@@ -142,7 +139,7 @@
         </OutArgument>
       </ui:ReadRange.DataTable>
     </ui:ReadRange>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -172,13 +169,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,1410.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,1389" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,1220.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,1203" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="variable1" />
             </Sequence.Variables>
@@ -187,7 +184,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">
@@ -205,7 +202,7 @@
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">
                   <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">
@@ -223,7 +220,7 @@
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <uasa:AppendItemToList x:TypeArguments="x:Int32" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_5">
+            <uasa:AppendItemToList x:TypeArguments="x:Int32" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_5">
               <uasa:AppendItemToList.ItemToAppend>
                 <InArgument x:TypeArguments="x:Int32">
                   <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">quantity</CSharpValue>
@@ -235,7 +232,7 @@
                 </InArgument>
               </uasa:AppendItemToList.List>
             </uasa:AppendItemToList>
-            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataRow">
                   <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">matchedRow</CSharpReference>
@@ -247,20 +244,20 @@
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <If sap:VirtualizedContainerService.HintSize="434,581.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap:VirtualizedContainerService.HintSize="434,576" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">matchedRow != null</CSharpValue>
                 </InArgument>
               </If.Condition>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,223.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uasa:AppendItemToList x:TypeArguments="sd:DataRow" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_8">
+                  <uasa:AppendItemToList x:TypeArguments="sd:DataRow" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_8">
                     <uasa:AppendItemToList.ItemToAppend>
                       <InArgument x:TypeArguments="sd:DataRow">
                         <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">matchedRow</CSharpValue>
@@ -275,13 +272,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,173" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_1">
                     <ui:MessageBox.Text>
                       <InArgument x:TypeArguments="x:Object">
                         <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46" xml:space="preserve">"The job code " +  jobCode + " couldn't be found, so it was skipped! Please, verify."</CSharpValue>
@@ -299,7 +296,7 @@
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">
             <CSharpValue.Result>
               <OutArgument x:TypeArguments="sd:DataTable" />
-            </CSharpValue.Result>dtEmailJobs</CSharpValue>
+            </CSharpValue.Result>Service</CSharpValue>
         </InArgument>
       </ui:ForEachRow.DataTable>
     </ui:ForEachRow>
