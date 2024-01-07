@@ -111,7 +111,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DeleteTmpFiles" sap:VirtualizedContainerService.HintSize="546,700" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DeleteTmpFiles" sap:VirtualizedContainerService.HintSize="546,573.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="D:\tmpRpa" Name="tmpPath" />
       <Variable x:TypeArguments="s:String[]" Name="filesToDelete" />
@@ -121,43 +121,36 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="484,589.3333333333334" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
-      <ui:ForEachFileX.Body>
-        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+    <ui:ForEachFolderX DisplayName="For Each Folder in Folder" sap:VirtualizedContainerService.HintSize="484,462.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachFolderX_1" IncludeSubFolders="False" OrderBy="NameAscFirst" SkipFoldersWithoutPermission="False">
+      <ui:ForEachFolderX.Body>
+        <ActivityAction x:TypeArguments="si:DirectoryInfo, x:Int32">
           <ActivityAction.Argument1>
-            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+            <DelegateInArgument x:TypeArguments="si:DirectoryInfo" Name="CurrentFolder" />
           </ActivityAction.Argument1>
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,319.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,192.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2">
-              <ui:MessageBox.Text>
-                <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">CurrentFile</CSharpValue>
-                </InArgument>
-              </ui:MessageBox.Text>
-            </ui:MessageBox>
-            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="388,82" sap2010:WorkflowViewState.IdRef="DeleteFileX_1">
-              <ui:DeleteFileX.Path>
+            <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="388,82" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Recursive="True">
+              <ui:DeleteFolderX.Path>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">CurrentFile.FullName</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">CurrentFolder.FullName</CSharpValue>
                 </InArgument>
-              </ui:DeleteFileX.Path>
-            </ui:DeleteFileX>
+              </ui:DeleteFolderX.Path>
+            </ui:DeleteFolderX>
           </Sequence>
         </ActivityAction>
-      </ui:ForEachFileX.Body>
-      <ui:ForEachFileX.Folder>
+      </ui:ForEachFolderX.Body>
+      <ui:ForEachFolderX.Folder>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">Config["PathOfRootTemporaryFolder"] + "\\" + TemporaryFolder + "\\Processed"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">Config["PathOfRootTemporaryFolder"].ToString()</CSharpValue>
         </InArgument>
-      </ui:ForEachFileX.Folder>
-    </ui:ForEachFileX>
+      </ui:ForEachFolderX.Folder>
+    </ui:ForEachFolderX>
   </Sequence>
 </Activity>

@@ -5,7 +5,7 @@
     <x:Property Name="TemporaryFolder" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1751.3333333333333,4308.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1751.3333333333333,4846.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -129,7 +129,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AfterLogin" sap:VirtualizedContainerService.HintSize="1112,4244" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AfterLogin" sap:VirtualizedContainerService.HintSize="1112,4782" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Doru Ionut" Name="clientName" />
       <Variable x:TypeArguments="x:String" Name="variable1" />
@@ -139,13 +139,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Pagina de pornire – Google Drive" sap:VirtualizedContainerService.HintSize="1050,4133.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsCVEnabled="False" ScopeGuid="94489937-7fd1-4240-b605-746381cf0dae" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Use Browser Chrome: Pagina de pornire – Google Drive" sap:VirtualizedContainerService.HintSize="1050,4671.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsCVEnabled="False" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="94489937-7fd1-4240-b605-746381cf0dae" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,3914" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,4452" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="D:\tmpRpa" Name="tmpPath" />
               <Variable x:TypeArguments="x:Int32" Name="fileCounter" />
@@ -155,22 +155,25 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="Smooth" DisplayName="Click 'Contul meu Drive'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Version="V3">
+            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="Smooth" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Contul meu Drive'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Timeout="{x:Null}" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://drive.google.com/drive/home" CvTextArea="153, 693, 237, 30" CvTextArgument="Contul meu Drive" CvType="Text" DesignTimeRectangle="156, 683, 344, 56" DesignTimeScaleFactor="2.137500047683716" ElementType="Text" FriendlyName="'Contul meu Drive'" FullSelectorArgument="&lt;webctrl aria-label='Contul meu Drive' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Contul meu Drive' tag='SPAN' type='' class='a-s-T' aaname='Contul meu Drive' check:innerText='Contul meu Drive' /&gt;" Guid="ad733944-ff13-4e14-a2e0-ed6d792b3bfc" InformativeScreenshot="1766a001d848ad81e8a0c9efa68d93d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pagina de pornire – Google Drive' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="3" DelayBefore="0.5" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="3" DelayBefore="0.5" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://drive.google.com/drive/my-drive" DesignTimeRectangle="545, 340, 971, 34" DesignTimeScaleFactor="1.7100000381469727" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='gb_re a-WErN3d-CQWwNe' aaname='' /&gt;" Guid="00d4ddf8-e210-4d9b-99b6-ff6c9943a0bd" InformativeScreenshot="f532bc904756d3f56fa457feb814ed8c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Contul meu Drive – Google Drive' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
               <uix:NTypeInto.Text>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">Worker + "[k(enter)]"</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">
+                    <CSharpValue.Result>
+                      <OutArgument x:TypeArguments="x:String" />
+                    </CSharpValue.Result>Worker + "[k(enter)]"</CSharpValue>
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
-            <uix:NCheckState DisplayName="Check user found" sap:VirtualizedContainerService.HintSize="954,1117.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Version="V3">
+            <uix:NCheckState ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Check user found" Exists="{x:Null}" sap:VirtualizedContainerService.HintSize="954,1117.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" Result="{x:Null}" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Timeout="{x:Null}" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,896" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
@@ -178,7 +181,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click AlterIfDisabled="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" UnblockInput="{x:Null}">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -200,7 +203,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click AlterIfDisabled="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" UnblockInput="{x:Null}">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -222,23 +225,29 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="5" DisplayName="Type Into 'Dosar fără titlu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="5" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Dosar fără titlu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://drive.google.com/drive/search?q=Doru%20Ionut" CvElementArea="834, 809, 516, 73" CvTextArea="865, 832, 157, 24" CvTextArgument="Dosar fara titlu" CvType="InputBox" DesignTimeRectangle="867, 824, 452, 42" DesignTimeScaleFactor="1.7100000381469727" ElementType="InputBox" FriendlyName="'Dosar fără titlu'" FullSelectorArgument="&lt;webctrl id='c255' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='c255' tag='INPUT' type='' class='LUNIy ' aaname='' /&gt;" Guid="7dc08f87-7135-430e-88d3-8e821c0cea40" InformativeScreenshot="0a008b8f4987cf509eececdaec01e712.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rezultatele căutării – Google Drive' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
                     <uix:NTypeInto.Text>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">Worker + "[k(enter)]"</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">
+                          <CSharpValue.Result>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </CSharpValue.Result>Worker + "[k(enter)]"</CSharpValue>
                       </InArgument>
                     </uix:NTypeInto.Text>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="1" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="1" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://drive.google.com/drive/my-drive" DesignTimeRectangle="545, 340, 971, 34" DesignTimeScaleFactor="1.7100000381469727" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='gb_re a-WErN3d-CQWwNe' aaname='' /&gt;" Guid="00d4ddf8-e210-4d9b-99b6-ff6c9943a0bd" InformativeScreenshot="f532bc904756d3f56fa457feb814ed8c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Contul meu Drive – Google Drive' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
                     <uix:NTypeInto.Text>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">Worker + "[k(enter)]"</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">
+                          <CSharpValue.Result>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </CSharpValue.Result>Worker + "[k(enter)]"</CSharpValue>
                       </InArgument>
                     </uix:NTypeInto.Text>
                   </uix:NTypeInto>
@@ -257,22 +266,25 @@
                 <uix:TargetAnchorable BrowserURL="https://drive.google.com/drive/search?q=owner:radu29.ionescu%40gmail.com" DesignTimeRectangle="787, 1172, 954, 150" DesignTimeScaleFactor="1.7100000381469727" FriendlyName="'Niciun rezultatÎncearcă'" FullSelectorArgument="&lt;webctrl parentid=':ln' tag='TABLE' /&gt;&lt;webctrl id='empty-view-content-search' tableRow='2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid=':ln' tag='TABLE' /&gt;&lt;webctrl id='empty-view-content-search' type='' tag='DIV' class='' aaname='' check:innerText='Niciun rezultat&amp;#xD;&amp;#xA;Încearcă să cauți din nou sau să folosești opțiunile de căutare pentru a găsi un' /&gt;" Guid="f939c383-3093-4e39-8eb5-2b763802b8b2" InformativeScreenshot="ca41f3539540c81e0a61f40c1cd408aa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rezultatele căutării – Google Drive' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NCheckState.Target>
             </uix:NCheckState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DelayBefore="0.5" DisplayName="Click clientName" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Middle" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Version="V3">
+            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="2" DelayBefore="0.5" DisplayName="Click clientName" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Middle" OutUiElement="{x:Null}" ScopeIdentifier="94489937-7fd1-4240-b605-746381cf0dae" Timeout="{x:Null}" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://drive.google.com/drive/search?q=Doru%20Ionut" CvTextArea="579, 805, 121, 22" CvType="Text" DesignTimeRectangle="581, 777, 133, 81" DesignTimeScaleFactor="1.7100000381469727" FriendlyName="'Doru Ionut'" Guid="1a54240b-5807-4967-8be4-6580e3b97027" InformativeScreenshot="a3b5e8fcc79bf494633c8962e62f4770.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rezultatele căutării – Google Drive' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.CvTextArgument>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">clientName</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>clientName</CSharpValue>
                     </InArgument>
                   </uix:TargetAnchorable.CvTextArgument>
                   <uix:TargetAnchorable.FullSelectorArgument>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"&lt;webctrl aria-label='" + clientName + " Dosar Google Drive' tag='DIV' /&gt;"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">"&lt;webctrl aria-label='" + Worker + " Dosar Google Drive' tag='DIV' /&gt;"</CSharpValue>
                     </InArgument>
                   </uix:TargetAnchorable.FullSelectorArgument>
                   <uix:TargetAnchorable.FuzzySelectorArgument>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"&lt;webctrl aria-label='" + clientName + " Dosar Google Drive' tag='DIV' /&gt;"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">"&lt;webctrl aria-label='" + Worker + " Dosar Google Drive' tag='DIV' /&gt;"</CSharpValue>
                     </InArgument>
                   </uix:TargetAnchorable.FuzzySelectorArgument>
                   <uix:TargetAnchorable.PointOffset>
@@ -281,7 +293,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBefore="1000" DelayMS="1000" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="954,139.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="1" KeyModifiers="Ctrl">
+            <ui:SendHotkey Activate="True" ClickBeforeTyping="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="1000" DelayBetweenKeys="{x:Null}" DelayMS="1000" DisplayName="Send Hotkey" EmptyField="{x:Null}" sap:VirtualizedContainerService.HintSize="954,139.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="1" KeyModifiers="Ctrl" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9bff1faf-6df2-45f2-a410-f749b2d31b27">
                   <ui:Target.TimeoutMS>
@@ -293,7 +305,7 @@
                 </ui:Target>
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBefore="1000" DelayMS="1000" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="954,139.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="w" KeyModifiers="Ctrl">
+            <ui:SendHotkey Activate="True" ClickBeforeTyping="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="1000" DelayBetweenKeys="{x:Null}" DelayMS="1000" DisplayName="Send Hotkey" EmptyField="{x:Null}" sap:VirtualizedContainerService.HintSize="954,139.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="w" KeyModifiers="Ctrl" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9bff1faf-6df2-45f2-a410-f749b2d31b27">
                   <ui:Target.TimeoutMS>
@@ -308,14 +320,17 @@
             <Assign sap:VirtualizedContainerService.HintSize="954,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">
-                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">fileCounter</CSharpReference>
+                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">
+                    <CSharpReference.Result>
+                      <OutArgument x:TypeArguments="Location(x:Int32)" />
+                    </CSharpReference.Result>fileCounter</CSharpReference>
                 </OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:Int32">0</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Doru'" sap:VirtualizedContainerService.HintSize="954,1363.3333333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e1d44fd72dc91c42eea869bd02cc1c20">
+            <ui:BrowserScope Browser="{x:Null}" BrowserType="Chrome" ContinueOnError="{x:Null}" DisplayName="Attach Browser 'chrome.exe Doru'" sap:VirtualizedContainerService.HintSize="954,1363.3333333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e1d44fd72dc91c42eea869bd02cc1c20" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -327,7 +342,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEachFileX DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="530,1105.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="{x:Null}" sap:VirtualizedContainerService.HintSize="530,1105.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
                       <ui:ForEachFileX.Body>
                         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                           <ActivityAction.Argument1>
@@ -337,12 +352,15 @@
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                           </ActivityAction.Argument2>
                           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,835.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="pathhh" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DelayMS="1000" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="1000" DelayMS="1000" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" UnblockInput="{x:Null}">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -364,7 +382,7 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Smooth" DelayBefore="1500" DelayMS="1500" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="Smooth" DelayBefore="1500" DelayMS="1500" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" UnblockInput="{x:Null}">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -386,9 +404,9 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'ToolbarWindow32'" sap:VirtualizedContainerService.HintSize="434,157.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1">
+                            <ui:TypeInto Activate="True" AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="2000" DeselectAfter="{x:Null}" DisplayName="Type Into 'ToolbarWindow32'" EmptyField="{x:Null}" sap:VirtualizedContainerService.HintSize="434,157.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="{x:Null}" SimulateType="{x:Null}">
                               <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2fe8a5b7-dbe0-4359-b7ef-298213c1f23b" InformativeScreenshot="5c8aa416abf58e7cdeea75c9639c1e9e" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;&lt;wnd aaname='Loading' cls='msctls_progress32' /&gt;&lt;wnd ctrlid='1001' title='Address: *' /&gt;">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2fe8a5b7-dbe0-4359-b7ef-298213c1f23b" InformativeScreenshot="ff7a7d9e60613213150f474ce8462343" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;&lt;wnd aaname='Loading' cls='msctls_progress32' /&gt;&lt;wnd ctrlid='1001'  /&gt;&lt;ctrl name='Address: *' role='tool bar' /&gt;&lt;ctrl name='All locations' role='split button' /&gt;">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
@@ -399,11 +417,11 @@
                               </ui:TypeInto.Target>
                               <ui:TypeInto.Text>
                                 <InArgument x:TypeArguments="x:String">
-                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">tmpPath + "[k(enter)]"</CSharpValue>
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">Config["PathOfRootTemporaryFolder"] + "\\" + TemporaryFolder + "\\Processed" + "[k(enter)]"</CSharpValue>
                                 </InArgument>
                               </ui:TypeInto.Text>
                             </ui:TypeInto>
-                            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" CursorMotionType="Smooth" DelayBefore="1000" DelayMS="1000" DisplayName="Click 'editable text  Name'" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" ClickType="CLICK_DOUBLE" ContinueOnError="{x:Null}" CursorMotionType="Smooth" DelayBefore="1000" DelayMS="1000" DisplayName="Click 'editable text  Name'" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" UnblockInput="{x:Null}">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -418,7 +436,10 @@
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b0e1427-f8c8-4933-8d5b-910a41f1d18a" InformativeScreenshot="f7aa59186eaa38092fe58846b2174983">
                                   <ui:Target.Selector>
                                     <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">"&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='" + fileCounter.ToString() + "' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' /&gt;"</CSharpValue>
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">
+                                        <CSharpValue.Result>
+                                          <OutArgument x:TypeArguments="x:String" />
+                                        </CSharpValue.Result>"&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='" + fileCounter.ToString() + "' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' /&gt;"</CSharpValue>
                                     </InArgument>
                                   </ui:Target.Selector>
                                   <ui:Target.TimeoutMS>
@@ -433,12 +454,18 @@
                             <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">
-                                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">fileCounter</CSharpReference>
+                                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">
+                                    <CSharpReference.Result>
+                                      <OutArgument x:TypeArguments="Location(x:Int32)" />
+                                    </CSharpReference.Result>fileCounter</CSharpReference>
                                 </OutArgument>
                               </Assign.To>
                               <Assign.Value>
                                 <InArgument x:TypeArguments="x:Int32">
-                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">fileCounter + 1</CSharpValue>
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">
+                                    <CSharpValue.Result>
+                                      <OutArgument x:TypeArguments="x:Int32" />
+                                    </CSharpValue.Result>fileCounter + 1</CSharpValue>
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
@@ -447,7 +474,10 @@
                       </ui:ForEachFileX.Body>
                       <ui:ForEachFileX.Folder>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">Config["PathOfRootTemporaryFolder"] + "\\" + TemporaryFolder + "\\Processed"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </CSharpValue.Result>Config["PathOfRootTemporaryFolder"] + "\\" + TemporaryFolder + "\\Processed"</CSharpValue>
                         </InArgument>
                       </ui:ForEachFileX.Folder>
                     </ui:ForEachFileX>
@@ -456,11 +486,47 @@
               </ui:BrowserScope.Body>
               <ui:BrowserScope.Selector>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">"&lt;html app='chrome.exe' title='" + clientName + " – Google Drive' /&gt;"</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">"&lt;html app='chrome.exe' title='" + Worker + " – Google Drive' /&gt;"</CSharpValue>
                 </InArgument>
               </ui:BrowserScope.Selector>
             </ui:BrowserScope>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="954,92" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="After login workflow finished" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="954,92" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="After login workflow finished" TextWriter="{x:Null}" />
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="954,139.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="t" KeyModifiers="Ctrl">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="85f36de2-02be-4dec-924c-612604186f0a">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="954,139.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="1" KeyModifiers="Ctrl">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="85f36de2-02be-4dec-924c-612604186f0a">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="954,139.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="w" KeyModifiers="Ctrl">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="85f36de2-02be-4dec-924c-612604186f0a">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
