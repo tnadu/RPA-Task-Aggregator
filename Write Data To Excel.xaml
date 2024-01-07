@@ -136,7 +136,10 @@
     <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataRow_4">
       <ui:AddDataRow.ArrayRow>
         <InArgument x:TypeArguments="s:Object[]">
-          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">new Object[] {"Services"}</CSharpValue>
+          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="s:Object[]" />
+            </CSharpValue.Result>new Object[] {"Services"}</CSharpValue>
         </InArgument>
       </ui:AddDataRow.ArrayRow>
       <ui:AddDataRow.DataTable>
@@ -148,7 +151,7 @@
         </InOutArgument>
       </ui:AddDataRow.DataTable>
     </ui:AddDataRow>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="555,812" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="555,812" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1" MaxIterations="{x:Null}">
       <ui:InterruptibleWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,676" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
@@ -267,7 +270,10 @@
           <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="479,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
             <ui:AddDataRow.ArrayRow>
               <InArgument x:TypeArguments="s:Object[]">
-                <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">new Object[] {jobName, quantity, currentPrice, currentTotalPrice}</CSharpValue>
+                <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">
+                  <CSharpValue.Result>
+                    <OutArgument x:TypeArguments="s:Object[]" />
+                  </CSharpValue.Result>new Object[] {jobName, quantity, currentPrice, currentTotalPrice}</CSharpValue>
               </InArgument>
             </ui:AddDataRow.ArrayRow>
             <ui:AddDataRow.DataTable>
@@ -309,7 +315,10 @@
     <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
       <ui:AddDataRow.ArrayRow>
         <InArgument x:TypeArguments="s:Object[]">
-          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">new Object[] {"Products"}</CSharpValue>
+          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="s:Object[]" />
+            </CSharpValue.Result>new Object[] {"Products"}</CSharpValue>
         </InArgument>
       </ui:AddDataRow.ArrayRow>
       <ui:AddDataRow.DataTable>
@@ -324,31 +333,43 @@
     <ui:MergeDataTable DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="555,133" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add">
       <ui:MergeDataTable.Destination>
         <InOutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">dtOutput</CSharpReference>
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">
+            <CSharpReference.Result>
+              <OutArgument x:TypeArguments="Location(sd:DataTable)" />
+            </CSharpReference.Result>dtOutput</CSharpReference>
         </InOutArgument>
       </ui:MergeDataTable.Destination>
       <ui:MergeDataTable.Source>
         <InArgument x:TypeArguments="sd:DataTable">
-          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">Products</CSharpValue>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="sd:DataTable" />
+            </CSharpValue.Result>Products</CSharpValue>
         </InArgument>
       </ui:MergeDataTable.Source>
     </ui:MergeDataTable>
     <Assign sap:VirtualizedContainerService.HintSize="555,82" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Decimal">
-          <CSharpReference x:TypeArguments="x:Decimal" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">finalTotalPrice</CSharpReference>
+          <CSharpReference x:TypeArguments="x:Decimal" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">
+            <CSharpReference.Result>
+              <OutArgument x:TypeArguments="Location(x:Decimal)" />
+            </CSharpReference.Result>finalTotalPrice</CSharpReference>
         </OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:Decimal">
-          <CSharpValue x:TypeArguments="x:Decimal" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">finalTotalPrice + Products.AsEnumerable().Sum(product =&gt; Convert.ToDecimal(product["Total"].ToString()))</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Decimal" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">finalTotalPrice + Products.AsEnumerable().Sum(product =&gt; Convert.ToDecimal(product["Column4"].ToString()))</CSharpValue>
         </InArgument>
       </Assign.Value>
     </Assign>
     <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataRow_6">
       <ui:AddDataRow.ArrayRow>
         <InArgument x:TypeArguments="s:Object[]">
-          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">new Object[] {"Grand Total", DBNull.Value, DBNull.Value, finalTotalPrice}</CSharpValue>
+          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="s:Object[]" />
+            </CSharpValue.Result>new Object[] {"Grand Total", DBNull.Value, DBNull.Value, finalTotalPrice}</CSharpValue>
         </InArgument>
       </ui:AddDataRow.ArrayRow>
       <ui:AddDataRow.DataTable>
@@ -360,7 +381,7 @@
         </InOutArgument>
       </ui:AddDataRow.DataTable>
     </ui:AddDataRow>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="555,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1">
+    <ui:WriteRange AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="555,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" Password="{x:Null}" SheetName="Sheet1" StartingCell="{x:Null}">
       <ui:WriteRange.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">
@@ -371,7 +392,10 @@
       </ui:WriteRange.DataTable>
       <ui:WriteRange.WorkbookPath>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">Config["PathOfRootTemporaryFolder"] + "\\" + TemporaryFolder + "\\Processed\\" + TemporaryFolder + ".xlsx"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>Config["PathOfRootTemporaryFolder"] + "\\" + TemporaryFolder + "\\Processed\\" + TemporaryFolder + ".xlsx"</CSharpValue>
         </InArgument>
       </ui:WriteRange.WorkbookPath>
     </ui:WriteRange>
