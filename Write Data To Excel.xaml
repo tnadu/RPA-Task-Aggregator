@@ -7,7 +7,7 @@
     <x:Property Name="TemporaryFolder" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1874,2217</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1874,2996</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -45,6 +45,7 @@
       <x:String>Newtonsoft.Json</x:String>
       <x:String>System.Dynamic</x:String>
       <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -112,7 +113,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Write_Data_To_Excel" sap:VirtualizedContainerService.HintSize="617,2152" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Write_Data_To_Excel" sap:VirtualizedContainerService.HintSize="617,2931" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtOutput" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
@@ -151,7 +152,7 @@
         </InOutArgument>
       </ui:AddDataRow.DataTable>
     </ui:AddDataRow>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="555,812" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1" MaxIterations="{x:Null}">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="555,812" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,676" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
@@ -312,6 +313,21 @@
           </CSharpValue.Result>index &lt; In_matchedRowList.Count()</CSharpValue>
       </ui:InterruptibleWhile.Condition>
     </ui:InterruptibleWhile>
+    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataRow_9">
+      <ui:AddDataRow.ArrayRow>
+        <InArgument x:TypeArguments="s:Object[]">
+          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">new Object[] {}</CSharpValue>
+        </InArgument>
+      </ui:AddDataRow.ArrayRow>
+      <ui:AddDataRow.DataTable>
+        <InOutArgument x:TypeArguments="sd:DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">
+            <CSharpReference.Result>
+              <OutArgument x:TypeArguments="Location(sd:DataTable)" />
+            </CSharpReference.Result>dtOutput</CSharpReference>
+        </InOutArgument>
+      </ui:AddDataRow.DataTable>
+    </ui:AddDataRow>
     <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
       <ui:AddDataRow.ArrayRow>
         <InArgument x:TypeArguments="s:Object[]">
@@ -330,24 +346,42 @@
         </InOutArgument>
       </ui:AddDataRow.DataTable>
     </ui:AddDataRow>
-    <ui:MergeDataTable DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="555,133" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add">
-      <ui:MergeDataTable.Destination>
-        <InOutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">
-            <CSharpReference.Result>
-              <OutArgument x:TypeArguments="Location(sd:DataTable)" />
-            </CSharpReference.Result>dtOutput</CSharpReference>
-        </InOutArgument>
-      </ui:MergeDataTable.Destination>
-      <ui:MergeDataTable.Source>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555,460" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Product" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,274" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="AddDataRow_6">
+              <ui:AddDataRow.ArrayRow>
+                <InArgument x:TypeArguments="s:Object[]">
+                  <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">new Object[] {Product["Column1"], Product["Column2"], Product["Column3"], Product["Column4"]}</CSharpValue>
+                </InArgument>
+              </ui:AddDataRow.ArrayRow>
+              <ui:AddDataRow.DataTable>
+                <InOutArgument x:TypeArguments="sd:DataTable">
+                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">
+                    <CSharpReference.Result>
+                      <OutArgument x:TypeArguments="Location(sd:DataTable)" />
+                    </CSharpReference.Result>dtOutput</CSharpReference>
+                </InOutArgument>
+              </ui:AddDataRow.DataTable>
+            </ui:AddDataRow>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <ui:ForEachRow.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
-          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">
-            <CSharpValue.Result>
-              <OutArgument x:TypeArguments="sd:DataTable" />
-            </CSharpValue.Result>Products</CSharpValue>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">Products</CSharpValue>
         </InArgument>
-      </ui:MergeDataTable.Source>
-    </ui:MergeDataTable>
+      </ui:ForEachRow.DataTable>
+    </ui:ForEachRow>
     <Assign sap:VirtualizedContainerService.HintSize="555,82" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Decimal">
@@ -363,10 +397,25 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataRow_6">
+    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataRow_10">
       <ui:AddDataRow.ArrayRow>
         <InArgument x:TypeArguments="s:Object[]">
-          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">
+          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">new Object[] {}</CSharpValue>
+        </InArgument>
+      </ui:AddDataRow.ArrayRow>
+      <ui:AddDataRow.DataTable>
+        <InOutArgument x:TypeArguments="sd:DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">
+            <CSharpReference.Result>
+              <OutArgument x:TypeArguments="Location(sd:DataTable)" />
+            </CSharpReference.Result>dtOutput</CSharpReference>
+        </InOutArgument>
+      </ui:AddDataRow.DataTable>
+    </ui:AddDataRow>
+    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataRow_8">
+      <ui:AddDataRow.ArrayRow>
+        <InArgument x:TypeArguments="s:Object[]">
+          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">
             <CSharpValue.Result>
               <OutArgument x:TypeArguments="s:Object[]" />
             </CSharpValue.Result>new Object[] {"Grand Total", DBNull.Value, DBNull.Value, finalTotalPrice}</CSharpValue>
@@ -374,14 +423,14 @@
       </ui:AddDataRow.ArrayRow>
       <ui:AddDataRow.DataTable>
         <InOutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">
             <CSharpReference.Result>
               <OutArgument x:TypeArguments="Location(sd:DataTable)" />
             </CSharpReference.Result>dtOutput</CSharpReference>
         </InOutArgument>
       </ui:AddDataRow.DataTable>
     </ui:AddDataRow>
-    <ui:WriteRange AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="555,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" Password="{x:Null}" SheetName="Sheet1" StartingCell="{x:Null}">
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="555,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1">
       <ui:WriteRange.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">
